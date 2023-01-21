@@ -506,3 +506,29 @@ obj.subtraction(45, 5)
 obj.multipy([1,2,3,4])
 obj.division(45, 5)
 obj.log(100.12)
+
+
+
+
+import time
+import tracemalloc
+
+class Complexity:
+    def __init__(self):
+        pass
+    
+    @staticmethod
+    def time_complexity(fn, *args):
+        start_time = time.time()
+        fn(*args)
+        end_time = time.time()
+        return end_time - start_time
+    
+    
+    def space_complexity(self , fn , *args):
+        tracemalloc.start()
+        fn(*args)
+        current, peak =  tracemalloc.get_traced_memory()
+        tracemalloc.stop()
+        
+        return current, peak
