@@ -18,3 +18,40 @@ class ListSearch:
         except Exception as e:
             lg.error("Error Occurred")
             lg.exception(e)
+
+
+
+
+import logging
+logging.basicConfig(filename='sol_2.log',level= logging.DEBUG,filemode='w', format="%(lineno)d-%(asctime)s-%(levelname)s-%(message)s")
+class Add_into_dict():
+    def __init__(self, diction):
+        self.diction = diction
+
+    def element_to_add(self, element):
+        logging.info("into the element_to_add method")
+        if type(element) == dict:
+            try:
+                logging.info("insinde the try>>>>>>>...")
+                self.diction.update(element)
+                logging.info("New element is added")
+                logging.info(f"{self.diction}")
+            except Exception as e:
+                logging.error("there is some issue with the code")
+                logging.error(e)
+                
+        else:
+            logging.error(f"please check {element} is valid dict or not ")
+            
+            
+            
+            
+
+
+class Tuple:
+    def __init__(self,t1):
+        self.t1=t1
+    def extract(self):
+            start=int(input('Enter the start index number'))
+            end=int(input('Enter the start index number'))
+            return self.t1[start:end]
