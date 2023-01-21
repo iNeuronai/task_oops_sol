@@ -618,3 +618,10 @@ obj.insert_data("glass.data")
 
 
 obj.show_data()
+
+
+
+
+def test() -> int : 
+    
+    return "sudh" 
